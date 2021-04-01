@@ -195,4 +195,6 @@ Son Customer y Product, esto son asignados por los nombres de las clases existen
 
 8. Implement the queries of the previous step using *derived query methods* in your repository interface. Is it possible to implement all of them?
 
+No se puede implementar el tercero (Users that have assigned more than 2 Todos) porque es necesario acceder a dos colecciones para realizarlo, y desde la interfaz sólo podemos acceder a una.
+
 

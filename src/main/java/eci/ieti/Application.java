@@ -168,6 +168,24 @@ public class Application implements CommandLineRunner {
         System.out.println("-------------------------------");
         todoDescription.forEach(System.out::println);
 
+        System.out.println("With Derived Query Methods");
+
+        List<Todo> todoExpired2 =  todoRepository.findByDueDateBefore(new Date());
+        System.out.println("Todos Expired:");
+        System.out.println("-------------------------------");
+        todoExpired2.forEach(System.out::println);
+
+        List<Todo> todoPriority2 =  todoRepository.findByPriorityGreaterThanAndResponsible(5, "juan@mail.com");
+        System.out.println("Todos with high priority:");
+        System.out.println("-------------------------------");
+        todoPriority2.forEach(System.out::println);
+
+        List<Todo> todoDescription2 =  todoRepository.findByDescriptionMatchesRegex(".{30,}");
+        System.out.println("Todos with a long description:");
+        System.out.println("-------------------------------");
+        todoDescription2.forEach(System.out::println);
+
+
     }
 
 }
